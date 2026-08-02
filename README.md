@@ -5,7 +5,7 @@ Two end-to-end ML pipelines built around the same core algorithm — **Random Fo
 1. **Regression** → predict the resale price of a used car
 2. **Classification** → predict whether a customer will buy a holiday package
 
-This README explains *why* Random Forest works, *what* was done in each notebook, and *how* to run this project — no prior ML background assumed.
+This README explains *why* Random Forest works, *what* was done in each notebook, and *how* to run this project.
 
 ---
 
