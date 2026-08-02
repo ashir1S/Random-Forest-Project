@@ -5,7 +5,7 @@ Two end-to-end ML pipelines built around the same core algorithm — **Random Fo
 1. **Regression** → predict the resale price of a used car
 2. **Classification** → predict whether a customer will buy a holiday package
 
-This README is written so that if you (future you 👋) come back to this repo after months, you can re-read it once and remember *why* Random Forest works, *what* was done, and *how* to run it again.
+This README explains *why* Random Forest works, *what* was done in each notebook, and *how* to run this project — no prior ML background assumed.
 
 ---
 
@@ -222,7 +222,7 @@ flowchart LR
 | Logistic Regression (baseline) | 0.8354 | 0.8078 | 0.6829 | 0.2932 | 0.6301 |
 | **Random Forest (tuned)** | **0.9315** | **0.9265** | **0.9697** | **0.6702** | **0.8325** |
 
-**Read this like a teacher would explain it back to you:**
+**In plain terms:**
 - Random Forest crushes Logistic Regression on every metric, especially **Recall** (0.29 → 0.67) — it catches over twice as many real buyers.
 - **Training accuracy hit 1.0000 (100%)** for the tuned model. That's a textbook overfitting signal — the forest has essentially memorized the training set. Test performance (93% accuracy) is still strong, so it's not a disaster, but it means the model is more confident than it should be, and a slightly shallower forest (lower `max_depth`, higher `min_samples_split`) would likely generalize just as well with less overfitting risk.
 - **Precision (0.97) >> Recall (0.67)**: when the model says "this person will buy," it's right 97% of the time — but it still misses about a third of actual buyers. For a marketing use-case that's usually an acceptable trade-off (you don't waste money on false leads), but worth knowing before you ship it.
@@ -253,7 +253,7 @@ jupyter notebook
 
 ---
 
-## 🎯 TL;DR for future-me
+## 🎯 TL;DR
 
 - **Random Forest** = a bunch of Decision Trees, each trained on a random bootstrap sample of rows and a random subset of features at every split, whose predictions are then averaged (regression) or voted on (classification).
 - It beats a single tree because averaging many *decorrelated* weak learners cancels out individual overfitting.
